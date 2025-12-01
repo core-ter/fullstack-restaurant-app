@@ -136,7 +136,7 @@
                     <ul class="footer-links">
                         <li><a href="/">Főoldal</a></li>
                         <li><a href="/public/menu.php">Étlap</a></li>
-                        <li><a href="/public/my-orders.php">Rendeléseim</a></li>
+                        <li><a href="/user/orders.php">Rendeléseim</a></li>
                         <li><a href="/public/login.php">Bejelentkezés</a></li>
                     </ul>
                 </div>
