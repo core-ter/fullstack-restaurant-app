@@ -148,17 +148,7 @@ A rendszer automatikus email értesítéseket küld:
 
 - Bcrypt jelszó hashelés
 - Email verifikáció támogatás
-- SQL injection védelem (prepared statements)
+- SQL injection védelem
 - XSS védelem
-
-## 👨‍💻 Készítette
-
-Ez a projekt egy portfólió munka, amely bemutatja a full-stack webfejlesztési képességeimet.
-
-## 📄 Licenc
-
-Ez a projekt oktatási és portfólió célokra készült.
-
----
 
 **🍔 Jó étvágyat! 🍕**
