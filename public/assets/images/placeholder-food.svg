@@ -1,0 +1,26 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3f4f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e5e7eb;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#grad)"/>
+  <g transform="translate(200, 150)">
+    <!-- Plate -->
+    <circle cx="0" cy="0" r="60" fill="#fff" stroke="#d1d5db" stroke-width="3"/>
+    <!-- Fork -->
+    <g transform="translate(-25, -10)">
+      <rect x="-2" y="-30" width="4" height="50" fill="#9ca3af"/>
+      <rect x="-10" y="-30" width="4" height="15" fill="#9ca3af"/>
+      <rect x="-2" y="-30" width="4" height="15" fill="#9ca3af"/>
+      <rect x="6" y="-30" width="4" height="15" fill="#9ca3af"/>
+    </g>
+    <!-- Knife -->
+    <g transform="translate(25, -10) rotate(45)">
+      <rect x="-2" y="-30" width="4" height="50" fill="#9ca3af"/>
+      <path d="M -5,-30 L 5,-30 L 2,-35 L -2,-35 Z" fill="#9ca3af"/>
+    </g>
+  </g>
+  <text x="200" y="270" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Kép hamarosan</text>
+</svg>

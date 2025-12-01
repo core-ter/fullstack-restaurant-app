@@ -1,0 +1,72 @@
+﻿
+/* ============================================
+   FILTER TABS - Light & Dark Mode Support
+   ============================================ */
+
+.filter-tabs {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.filter-tab:hover {
+    background: var(--bg-secondary);
+    border-color: var(--primary);
+}
+
+.filter-tab.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Light mode specific overrides */
+[data-theme="light"] .filter-tab {
+    background: #ffffff;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+}
+
+[data-theme="light"] .filter-tab:hover {
+    background: #f9fafb;
+    border-color: #e63946;
+}
+
+[data-theme="light"] .filter-tab.active {
+    background: #e63946;
+    color: #ffffff;
+    border-color: #e63946;
+}
+
+/* Dark mode specific */
+[data-theme="dark"] .filter-tab {
+    background: #1f2937;
+    color: #f3f4f6;
+    border: 1px solid #374151;
+}
+
+[data-theme="dark"] .filter-tab:hover {
+    background: #374151;
+    border-color: #e63946;
+}
+
+[data-theme="dark"] .filter-tab.active {
+    background: #e63946;
+    color: #ffffff;
+    border-color: #e63946;
+}

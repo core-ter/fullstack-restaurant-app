@@ -1,0 +1,109 @@
+/* ============================================
+   Dark Mode Specific Styles
+   ============================================ */
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: var(--text-xl);
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    color: var(--primary-color);
+    background-color: var(--bg-tertiary);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Dark mode adjustments for components */
+[data-theme="dark"] .navbar {
+    background-color: var(--bg-secondary);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .navbar-menu a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .navbar-menu a:hover,
+[data-theme="dark"] .navbar-menu a.active {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .cart-icon {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .cart-icon:hover {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .features {
+    background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .feature-card p {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .feature-card h3 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-textarea,
+[data-theme="dark"] .form-select {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-textarea:focus,
+[data-theme="dark"] .form-select:focus {
+    border-color: var(--primary-color);
+    background-color: var(--bg-secondary);
+}
+
+/* Footer specific dark mode styles */
+[data-theme="dark"] .footer {
+    background-color: #0A0F14;
+}
+
+[data-theme="dark"] .footer p,
+[data-theme="dark"] .footer-links a,
+[data-theme="dark"] .footer-links li {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .footer-links a:hover {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .footer h4 {
+    color: var(--white);
+}
+
+/* Override gray text in dark mode */
+[data-theme="dark"] p {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .text-center[style*="color"] {
+    color: var(--text-secondary) !important;
+}

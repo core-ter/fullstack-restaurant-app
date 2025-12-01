@@ -1,0 +1,38 @@
+# Environment variables
+.env
+
+# PHP
+vendor/
+
+# Database
+*.sql.backup
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+error_log
+debug.log
+
+# Uploaded files
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Node modules (if using any build tools)
+node_modules/
+package-lock.json
