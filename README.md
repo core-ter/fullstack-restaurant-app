@@ -142,6 +142,8 @@ A rendszer **11 táblát** tartalmaz:
 ## 📧 Email Értesítések
 
 A rendszer automatikus email értesítéseket küld:
+- ✅ Erősítsd meg az e-mail címed
+- ✅ E-mail címed megerősítve
 - ✅ Rendelés elfogadva
 
 ## 🔒 Biztonság
