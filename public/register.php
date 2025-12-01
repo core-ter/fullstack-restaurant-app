@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/auth.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google reCAPTCHA v3 Configuration -->
+    <?php
+    require_once __DIR__ . '/api/config/database.php';
+    $recaptchaSiteKey = RECAPTCHA_SITE_KEY;
+    ?>
+    <script>
+        window.RECAPTCHA_SITE_KEY = '<?php echo $recaptchaSiteKey; ?>';
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $recaptchaSiteKey; ?>"></script>
 </head>
 <body>
     <div class="auth-container">

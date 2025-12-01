@@ -1,12 +1,39 @@
+// Helper function to get reCAPTCHA token
+async function getRecaptchaToken(action) {
+    if (typeof grecaptcha === 'undefined' || !window.RECAPTCHA_SITE_KEY) {
+        console.warn('reCAPTCHA not loaded or configured');
+        return '';
+    }
+
+    return new Promise((resolve) => {
+        grecaptcha.ready(() => {
+            grecaptcha.execute(window.RECAPTCHA_SITE_KEY, { action: action })
+                .then(token => resolve(token))
+                .catch(err => {
+                    console.error('reCAPTCHA error:', err);
+                    resolve('');
+                });
+        });
+    });
+}
+
 // Login form handling
 if (document.getElementById('loginForm')) {
     document.getElementById('loginForm').addEventListener('submit', async function (e) {
         e.preventDefault();
 
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Bejelentkezés...';
+
         const formData = new FormData(e.target);
+        const token = await getRecaptchaToken('login');
+
         const data = {
             email: formData.get('email'),
-            password: formData.get('password')
+            password: formData.get('password'),
+            recaptcha_token: token
         };
 
         try {
@@ -25,10 +52,14 @@ if (document.getElementById('loginForm')) {
                 }, 500);
             } else {
                 showToast(result.message, 'error');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
             }
         } catch (error) {
             console.error('Login error:', error);
             showToast('Hiba történt a bejelentkezés során', 'error');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
         }
     });
 }
@@ -54,12 +85,20 @@ if (document.getElementById('registerForm')) {
             return;
         }
 
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Regisztráció...';
+
+        const token = await getRecaptchaToken('register');
+
         const data = {
             email: formData.get('email'),
             password: password,
             first_name: formData.get('first_name'),
             last_name: formData.get('last_name'),
-            phone: formData.get('phone')
+            phone: formData.get('phone'),
+            recaptcha_token: token
         };
 
         try {
@@ -78,10 +117,14 @@ if (document.getElementById('registerForm')) {
                 }, 500);
             } else {
                 showToast(result.message, 'error');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
             }
         } catch (error) {
             console.error('Registration error:', error);
             showToast('Hiba történt a regisztráció során', 'error');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
         }
     });
 }

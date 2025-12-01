@@ -19,6 +19,36 @@ try {
     $email = trim($input['email']);
     $password = $input['password'];
     
+    // Verify reCAPTCHA token
+    if (defined('RECAPTCHA_SECRET_KEY') && !empty(RECAPTCHA_SECRET_KEY)) {
+        if (empty($input['recaptcha_token'])) {
+            http_response_code(400);
+            echo json_encode([
+                'success' => false,
+                'message' => 'reCAPTCHA ellenőrzés szükséges'
+            ]);
+            exit;
+        }
+
+        $recaptchaResponse = @file_get_contents(
+            'https://www.google.com/recaptcha/api/siteverify?secret=' . RECAPTCHA_SECRET_KEY . 
+            '&response=' . $input['recaptcha_token']
+        );
+        
+        if ($recaptchaResponse) {
+            $recaptchaData = json_decode($recaptchaResponse);
+            
+            if (!$recaptchaData->success || $recaptchaData->score < RECAPTCHA_MIN_SCORE) {
+                http_response_code(400);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'reCAPTCHA ellenőrzés sikertelen. Kérjük, próbáld újra.'
+                ]);
+                exit;
+            }
+        }
+    }
+    
     $db = getDBConnection();
     
     // Find user by email
