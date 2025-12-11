@@ -1,25 +1,25 @@
-# 🍽️ Debreceni Étterem - Online Rendelési Rendszer
+# Debreceni Étterem - Online Rendelési Rendszer
 
 Modern, teljes körű online rendelési rendszer egy fiktív debreceni étterem számára. A projekt célja egy portfólióra alkalmas, produkciós szintű webalkalmazás bemutatása.
 
-## ✨ Főbb Funkciók
+## Főbb Funkciók
 
 ### Felhasználói Oldal
-- 🛒 **Online rendelés** vendégként vagy regisztrált felhasználóként
-- 🎁 **10% kedvezmény** regisztrált felhasználóknak az első rendelésnél
-- ⚡ **Egyszerűsített pénztár** bejelentkezett felhasználóknak (automatikus adatkitöltés)
-- 📍 **Dinamikus kiszállítási díj** számítás távolság alapján (OpenStreetMap)
-- 📦 **Rendelés követés** valós idejű státusz frissítésekkel
-- 📧 **Email értesítések** rendelés állapot változásokról
+-  **Online rendelés** vendégként vagy regisztrált felhasználóként
+-  **10% kedvezmény** regisztrált felhasználóknak az első rendelésnél
+-  **Egyszerűsített pénztár** bejelentkezett felhasználóknak (automatikus adatkitöltés)
+-  **Dinamikus kiszállítási díj** számítás távolság alapján (OpenStreetMap)
+-  **Rendelés követés** valós idejű státusz frissítésekkel
+-  **Email értesítések** rendelés állapot változásokról
 
 ### Admin Felület
-- 📊 **Rendeléskezelő dashboard** valós idejű státusz frissítésekkel
-- 🍕 **Étlap szerkesztő** (CRUD műveletek)
-- 🚚 **Kiszállítási zónák** konfigurálása
-- 📈 **Rendelési statisztikák**
-- 👥 **Admin hozzáférés** (biztonságos bejelentkezés)
+-  **Rendeléskezelő dashboard** valós idejű státusz frissítésekkel
+-  **Étlap szerkesztő** (CRUD műveletek)
+-  **Kiszállítási zónák** konfigurálása
+-  **Rendelési statisztikák**
+-  **Admin hozzáférés** (biztonságos bejelentkezés)
 
-## 🛠️ Technológiai Stack
+## Technológiai Stack
 
 - **Frontend:** HTML5, CSS3 (Vanilla), JavaScript (ES6+)
 - **Backend:** PHP 8.x
@@ -27,7 +27,7 @@ Modern, teljes körű online rendelési rendszer egy fiktív debreceni étterem 
 - **Térkép:** OpenStreetMap + Leaflet.js
 - **Email:** SMTP (Gmail)
 
-## 📁 Projekt Struktúra
+## Projekt Struktúra
 
 ```
 project-restaurant/
@@ -59,7 +59,7 @@ project-restaurant/
 └── README.md
 ```
 
-## 🚀 Telepítés és Futtatás
+## Telepítés és Futtatás
 
 ### Előfeltételek
 
@@ -129,7 +129,7 @@ A rendszer **11 táblát** tartalmaz:
 10. `delivery_zones` - Kiszállítási zónák és díjak
 11. `restaurant_settings` - Étterem beállítások
 
-## 🎨 Design Highlights
+## Design Highlights
 - **Modern UI/UX** glassmorphism elemekkel
 - **Reszponzív design** (mobil, tablet, desktop)
 - **Smooth animációk** és hover effektek
@@ -139,14 +139,14 @@ A rendszer **11 táblát** tartalmaz:
   - Accent: `#457B9D` (Kék)
   - Success: `#06D6A0` (Zöld)
 
-## 📧 Email Értesítések
+## Email Értesítések
 
 A rendszer automatikus email értesítéseket küld:
-- ✅ Erősítsd meg az e-mail címed
-- ✅ E-mail címed megerősítve
-- ✅ Rendelés elfogadva
+-  Erősítsd meg az e-mail címed
+-  E-mail címed megerősítve
+-  Rendelés elfogadva
 
-## 🔒 Biztonság
+##  Biztonság
 
 - Bcrypt jelszó hashelés
 - Email verifikáció támogatás
